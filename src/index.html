@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Monstronome</title>
+	<link rel="stylesheet" href="./index.less">
+	<link rel="stylesheet" href="../node_modules/toastr/toastr.less">
+</head>
+<body>
+	<section id="Metronome">
+		<a id="PlayButton" href="#">
+			<svg class="icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 100 100">
+				<path d="
+					M 10 10
+					L 10 90
+					L 90 50
+					Z" stroke="white"/>
+			</svg>
+		</a>
+
+		<div class="setting">
+			<input type="text" name="bpm" id="InputBPM" value="100">
+			<label for="bpm">BPM</label>
+		</div>
+		<div class="setting">
+			<input type="text" name="timeCount" id="InputTimeCount" value="4">/<input type="text" name="timeBasis" id="InputTimeBasis" value="4">
+		</div>
+	</section>
+
+	<section id="Schedule">
+		<div class="section">
+
+		</div>
+	</section>
+
+	<script src="./index.ts"></script>
+</body>
+</html>
