@@ -44,9 +44,10 @@ class Metronome {
 	private _start() {
 		setTimeout(() => {
 			try {
-				this.oneSound(this.audioContext.currentTime);
-				if(this.playing)
-					this._start();
+				if(this.playing) {
+					this.oneSound(this.audioContext.currentTime);
+						this._start();
+				}
 			}
 			catch(e) {
 				toastr.error(e.message, "Failure during playback");
