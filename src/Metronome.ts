@@ -1,4 +1,3 @@
-import { contextFor } from 'knockout';
 import toastr from 'toastr';
 
 export default

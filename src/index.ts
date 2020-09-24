@@ -1,10 +1,6 @@
-import toastr from 'toastr'
 import Metronome from './Metronome'
 
 let metronome = new Metronome();
-
-
-let playButton = document.getElementById("PlayButton");
 
 let inputs = {
 	InputBPM:       document.getElementById("InputBPM")       as HTMLInputElement,
@@ -26,10 +22,14 @@ function bindInput<T>(object: T, input: HTMLInputElement, name: keyof(T)) {
 bindInput(metronome, inputs.InputBPM,       "bpm");
 bindInput(metronome, inputs.InputTimeCount, "timeBasis");
 bindInput(metronome, inputs.InputTimeBasis, "timeCount");
-playButton.addEventListener('click', e => metronome.togglePlayback());
+inputs.PlayButton.addEventListener('click', e => metronome.togglePlayback());
 document.body.addEventListener('keypress', e => {
 	if(e.key == ' ') {
 		metronome.togglePlayback();
+
+		document.getElementById("PlayingIcon").style.display = metronome.playing?'none':'inline-block';
+		document.getElementById("PauseIcon").style.display   = metronome.playing?'inline-block':'none';
+
 		e.stopPropagation();
 		e.preventDefault();
 	}
