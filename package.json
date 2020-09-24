@@ -8,7 +8,7 @@
     "build": "parcel build src/index.html && cp dist/index.html ."
   },
   "author": "Benno Straub",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "@types/knockout": "^3.4.69",
